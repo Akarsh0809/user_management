@@ -65,7 +65,7 @@ async def test_get_by_email_user_does_not_exist(db_session):
 # Test updating a user with valid data
 async def test_update_user_valid_data(db_session, user):
     new_email = "updated_email@example.com"
-    updated_user = await UserService.update(db_session, user.id, {"email": new_email})
+    updated_user = await UserService.update(db_session, user.id, {"email": new_email, "nickname": "new_nickname"})
     assert updated_user is not None
     assert updated_user.email == new_email
 
@@ -163,7 +163,6 @@ async def test_unlock_user_account(db_session, locked_user):
     refreshed_user = await UserService.get_by_id(db_session, locked_user.id)
     assert not refreshed_user.is_locked, "The user should no longer be locked"
 
-
 # Test updating non-existent user
 async def test_update_non_existent_user(db_session):
     non_existent_user_id = "non-existent-id"
@@ -174,6 +173,7 @@ async def test_update_non_existent_user(db_session):
 async def test_list_users_beyond_range(db_session):
     users = await UserService.list_users(db_session, skip=1000, limit=10)
     assert len(users) == 0
+
 
 # Test for account unlock using incorrect ID
 async def test_unlock_user_account_incorrect_id(db_session):
