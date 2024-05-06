@@ -21,3 +21,13 @@ link : [https://github.com/Kiran-Ramisetti-kr483/user_management/pull/7/files](h
 In this issue I notices that few test cases were passing even when the test case was failing related to error code 400 and saw few issues with dupicate emains and nickname. I had to update new routes in user_routes.py and change few lines of code in user_service.py, common.py, test_users_api.py and test_user_service.py.
 
 link : [https://github.com/Kiran-Ramisetti-kr483/user_management/pull/9/files](https://)
+
+### 5. Issue with unverified users and locked users.
+There were few issues with verification process for a new user and locked  user. I updated code in user_routes.py and user_service.py. I added new test cases in test_users_api.py to ensure that the verification process for new user is working properly.
+
+link : [https://github.com/Kiran-Ramisetti-kr483/user_management/pull/11/files](https://)
+
+### 6. Password validation.
+I updated the code in user_schemas.py to strictly validate the password and added few lines of code in user_routes.py. I even added few test cases to in test_user_api.py and test_user_schemas.py to verify validation of password.
+
+link : [https://github.com/Kiran-Ramisetti-kr483/user_management/pull/16/files](https://)
