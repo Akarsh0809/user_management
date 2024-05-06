@@ -20,42 +20,42 @@ minio_client = Minio(
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 MAX_FILE_SIZE = 10 * 1024 * 1024 
 
-async def upload(file : UploadFile,user_id:UUID) -> str:
+async def upload(file: UploadFile, user_id: UUID) -> str:
     try:
-            # Save the uploaded file to a temporary directory
-        # p = read_index()
+        if not allowed_file(file):
+            return "File type is not allowed"
 
-        file_path = f"/tmp/{file.filename}"
+        # Read the file data into memory
+        file_data = await file.read()
         size = (200, 200)  # New size: width = 200, height = 200
-        with open(file_path, "wb") as buffer:
-            buffer.write(await file.read())
-        resized_image_data = resize_image(file_path, size,user_id)
-        print(resized_image_data)
+        resized_image_data = resize_image(file_data, size, user_id)
 
+        # Generate file name
+        image_extension = file.filename.split('.')[-1]
+        image_name = f"{user_id}.{image_extension}"
 
-        image_name = str(user_id)+"."+file.filename.split('.')[1]
-        # Upload the file to Minio
-        minio_client.fput_object(settings.MINIO_BUCKET_NAME, image_name, resized_image_data)
-
-        # Remove the temporary file
-        os.remove(file_path)
-        os.remove(resized_image_data)
+        # Upload the resized image to Minio
+        minio_client.put_object(
+            settings.MINIO_BUCKET_NAME,
+            image_name,
+            resized_image_data,
+            resized_image_data.getbuffer().nbytes
+        )
 
         # Return success response
-        return "http://localhost:9000/"+settings.MINIO_BUCKET_NAME+"/"+image_name
+        return f"http://{settings.MINIO_ENDPOINT}/{settings.MINIO_BUCKET_NAME}/{image_name}"
     except S3Error as exc:
         print("error occurred.", exc)
         return None
 
-def allowed_file(file:UploadFile):
+def allowed_file(file: UploadFile):
     filename = file.filename
-    """Check if the file has allowed extension"""
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-def resize_image(image, size,user_id):
-    with Image.open(image) as img:
+def resize_image(file_data, size, user_id):
+    with Image.open(BytesIO(file_data)) as img:
         resized_img = img.resize(size)
-        # Convert image to bytes
-        output_path = f"/tmp/{str(user_id)+"."+image.split('.')[1]}"
-        resized_img.save(output_path)
-        return output_path
+        output = BytesIO()
+        resized_img.save(output, format=img.format)
+        output.seek(0)
+        return output
