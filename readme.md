@@ -77,8 +77,16 @@ I updated the code in user_schemas.py to strictly validate the password and adde
 
 link : [https://github.com/Kiran-Ramisetti-kr483/user_management/pull/16/files](https://)
 
-# New Feature - upload pictures using minio.
+## New Feature - upload pictures using minio.
 To be able to upload and update profile picture to personalize the suer account. For this I implemented an API endpoint for users to upload their profile picture, store the uploaded profile pictures securly in Minio, updating the user profile API endpoints to include the profile picture URL and retriving the profile picture URL from Minio when displaying user profiles.
 
 link : [https://github.com/Kiran-Ramisetti-kr483/user_management/pull/20/files](https://)
+
+## Test cases.
+In total I added 19 test cases to resolve few issues and test if those issues are resolved or not. The above links in Problems faced while doing this project have the new test cases I added into the project.
+
+## Dockerhub link and Image.
+The project is working well and the docker image is being saved in the dockerhub. The link and image of my dockerhub repositories are give below:
+
+link : [https://hub.docker.com/repository/docker/kr483/user_management/general](https://)
 
