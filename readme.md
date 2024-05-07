@@ -1,53 +1,71 @@
+# Final Project
+
+## What I learnt in this course.
+Throughout this course, I've gained invaluable knowledge and practical skills that are indispensable for modern software development. Here's a comprehensive overview of what I've learned:
+
+### 1. Docker:
+I've mastered the use of Docker, revolutionizing deployment by packaging applications and their environments into containers that can run consistently across various development and production environments.
+
+### 2. Nginx:
+I've learned to effectively utilize Nginx for web server configuration and load balancing, ensuring optimal performance and scalability of applications.
+
+### 3. Git:
+Deepening my understanding of Git for version control has been essential for managing changes to project codebases, collaborating with team members, and maintaining a robust workflow.
+
+### 4. Python:
+I've enhanced my Python skills, focusing on writing clean, well-documented code that adheres to industry standards. Python's versatility has been showcased through its applications in web development and data analysis.
+
+### 5. Testing Using Python:
+I've gained proficiency in writing reliable tests using Python frameworks like PyTest, ensuring code works as intended before deployment and improving overall code quality.
+
+### 6. GitHub Actions:
+Exploring GitHub Actions has allowed me to automate workflows such as running tests, linting code, and managing deployments directly from GitHub repositories, streamlining the development process and enhancing collaboration.
+
+### 7. Dockerhub:
+Utilizing DockerHub for storing and managing Docker images has simplified deployments by enabling easy sharing and version control of images with my team.
+
+### 8. APIs:
+Delving into API development has been fundamental for building modern software applications, facilitating seamless communication between different components and services.
+
+### 9. Minio:
+Learning to use Minio has provided me with efficient solutions for storing and retrieving large amounts of unstructured data, ensuring reliability and scalability in applications.
+
+### 10. REPL (Read-Eval-Print Loop):
+Understanding REPL environments has been a valuable addition to my skill set, providing immediate feedback, facilitating experimentation, enhancing debugging capabilities, and serving as a learning and teaching aid.
 
 
-# The User Management System Final Project: Your Epic Coding Adventure Awaits! 🎉✨🔥
+#### a. Instant Feedback Loop:
+REPL environments like Python's IDLE or interactive shells for languages like Node.js offer immediate feedback on code snippets. This fosters a deeper understanding of functions and operations, enhancing the learning experience.
 
-## Introduction: Buckle Up for the Ride of a Lifetime 🚀🎬
+#### b. Playground for Exploration:
+REPL serves as an ideal platform for experimenting with new libraries or language features and testing small code snippets. It allows for quick troubleshooting of specific functionalities before integrating them into larger projects.
 
-Welcome to the User Management System project - an epic open-source adventure crafted by the legendary Professor Keith Williams for his rockstar students at NJIT! 🏫👨‍🏫⭐ This project is your gateway to coding glory, providing a bulletproof foundation for a user management system that will blow your mind! 🤯 You'll bridge the gap between the realms of seasoned software pros and aspiring student developers like yourselves. 
+#### c. Streamlined Debugging Process:
+REPL significantly improves debugging skills by enabling the isolation of problematic code sections and interactive testing of solutions. This reduces the time needed to identify and fix bugs.
 
-### [Instructor Video - Project Overview and Tips](https://youtu.be/gairLNAp6mA) 🎥
+#### d. Enhanced Learning and Teaching Tool:
+REPL is a valuable learning and teaching tool, reinforcing concepts learned in class by providing real-time practice and immediate feedback. This aids in understanding coding concepts and assisting peers in grasping them effectively.
 
-- [Introduction to the system features and overview of the project - please read](system_documentation.md) 📚
-- [Project Setup Instructions](setup.md) ⚒️
-- [Features to Select From](features.md) 🛠️
-- [About the Project](about.md)🔥🌟
+#### In Summary:
+This course has equipped me with a comprehensive toolkit for modern software development, covering essential technologies and methodologies such as Docker, Git, Python, testing, API development, Minio, and REPL. I'm confident that these skills will enable me to contribute effectively to real-world projects and continue my growth as a software developer.
 
-## Goals and Objectives: Unlock Your Coding Superpowers 🎯🏆🌟
+## Challenges Faced During Project Execution
 
-Get ready to ascend to new heights with this legendary project:
+Throughout the development of the project, several challenges arose, each requiring careful analysis and resolution to ensure the smooth progress of the application. Here's an overview of the key challenges encountered and the steps taken to address them:
 
-1. **Practical Experience**: Dive headfirst into a real-world codebase, collaborate with your teammates, and contribute to an open-source project like a seasoned pro! 💻👩‍💻🔥
-2. **Quality Assurance**: Develop ninja-level skills in identifying and resolving bugs, ensuring your code quality and reliability are out of this world. 🐞🔍⚡
-3. **Test Coverage**: Write additional tests to cover edge cases, error scenarios, and important functionalities - leave no stone unturned and no bug left behind! ✅🧪🕵️‍♂️
-4. **Feature Implementation**: Implement a brand new, mind-blowing feature and make your epic mark on the project, following best practices for coding, testing, and documentation like a true artisan. ✨🚀🎆
-5. **Collaboration**: Foster teamwork and collaboration through code reviews, issue tracking, and adhering to contribution guidelines - teamwork makes the dream work, and together you'll conquer worlds! 🤝💪🌍
-6. **Industry Readiness**: Prepare for the software industry by working on a project that simulates real-world development scenarios - level up your skills to super hero status  and become an unstoppable coding force! 🔝🚀🏆⚡
+### 1. Editing production.yml File:
+The production.yml file presented issues that were causing GitHub Actions to fail. To rectify this, I made changes to the GitHub username and Docker image name. Additionally, I added environment variables, including GITHUB_USERNAME and GITHUB_TOKEN, which successfully resolved the issues.
 
-## Submission and Grading: Your Chance to Shine 📝✏️📈
+### 2. Email Verification Issue:
+One of the challenges involved email verification, where the structure was not organized correctly. By rearranging a few lines of code and adding additional test cases, I ensured that the email verification process functioned properly.
 
-1. **Reflection Document**: Submit a 1-2 page Word document reflecting on your learnings throughout the course and your experience working on this epic project. Include links to the closed issues for the **5 QA issues, 10 NEW tests, and 1 Feature** you'll be graded on. Make sure your project successfully deploys to DockerHub and include a link to your Docker repository in the document - let your work speak for itself! 📄🔗💥
+### 3. Creation of auth_routes.py:
+To maintain a clean and manageable codebase, I created a new file, auth_routes.py. This file handles routes related to authentication, such as login, logout, and password management. By separating authentication routes from user profile routes (handled in user_routes.py), the codebase became more organized and maintainable.
 
-2. **Commit History**: Show off your consistent hard work through your commit history like a true coding warrior. **Projects with less than 10 commits will get an automatic 0 - ouch!** 😬⚠️ A significant part of your project's evaluation will be based on your use of issues, commits, and following a professional development process like a boss - prove your coding prowess! 💻🔄🔥
+### 4. Duplicate Email and Nickname Issue:
+An issue arose with duplicate emails and nicknames, where certain test cases were passing despite the failure related to error code 400. I addressed this by updating routes in user_routes.py and making changes to several files, including user_service.py, common.py, test_users_api.py, and test_user_service.py.
 
-3. **Deployability**: Broken projects that don't deploy to Dockerhub or pass all the automated tests on GitHub actions will face point deductions - nobody likes a buggy app! 🐞☠️ Show the world your flawless coding skills!
+### 5. Issues with Unverified and Locked Users:
+There were issues with the verification process for new and locked users. To resolve this, I updated code in user_routes.py and user_service.py. Additionally, I added new test cases in test_users_api.py to ensure the proper functioning of the verification process for new users.
 
-## Managing the Project Workload: Stay Focused, Stay Victorious ⏱️🧠⚡
-
-This project requires effective time management and a well-planned strategy, but fear not - you've got this! Follow these steps to ensure a successful (and sane!) project outcome:
-
-1. **Select a Feature**: [Choose a feature](features.md) from the provided list of additional improvements that sparks your interest and aligns with your goals like a laser beam. ✨⭐🎯 This is your chance to shine!
-
-2. **Quality Assurance (QA)**: Thoroughly test the system's major functionalities related to your chosen feature and identify at least 5 issues or bugs like a true detective. Create GitHub issues for each identified problem, providing detailed descriptions and steps to reproduce - the more detail, the merrier! 🔍🐞🕵️‍♀️ Leave no stone unturned!
-
-3. **Test Coverage Improvement**: Review the existing test suite and identify gaps in test coverage like a pro. Create 10 additional tests to cover edge cases, error scenarios, and important functionalities related to your chosen feature. Focus on areas such as user registration, login, authorization, and database interactions. Simulate the setup of the system as the admin user, then creating users, and updating user accounts - leave no stone unturned, no bug left behind! ✅🧪🔍🔬 Become the master of testing!
-
-4. **New Feature Implementation**: Implement your chosen feature, following the project's coding practices and architecture like a coding ninja. Write appropriate tests to ensure your new feature is functional and reliable like a rock. Document the new feature, including its usage, configuration, and any necessary migrations - future you will thank you profusely! 🚀✨📝👩‍💻⚡ Make your mark on this project!
-
-5. **Maintain a Working Main Branch**: Throughout the project, ensure you always have a working main branch deploying to Docker like a well-oiled machine. This will prevent any last-minute headaches and ensure a smooth submission process - no tears allowed, only triumphs! 😊🚢⚓ Stay focused, stay victorious!
-
-Remember, it's more important to make something work reliably and be reasonably complete than to implement an overly complex feature. Focus on creating a feature that you can build upon or demonstrate in an interview setting - show off your skills like a rockstar! 💪🚀🎓
-
-Don't forget to always have a working main branch deploying to Docker at all times. If you always have a working main branch, you will never be in jeopardy of receiving a very disappointing grade :-). Keep that main branch shining bright!
-
-Let's embark on this epic coding adventure together and conquer the world of software engineering! You've got this, coding rockstars! 🚀🌟✨
+Each of these challenges presented opportunities for learning and growth, and by addressing them effectively, the project moved forward smoothly towards completion.
