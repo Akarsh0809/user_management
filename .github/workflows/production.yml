@@ -1,3 +1,4 @@
+
 name: CI/CD Pipeline
 
 on:
@@ -47,7 +48,7 @@ jobs:
           
       - name: Run tests with Pytest
         env:
-          DATABASE_URL: postgresql+asyncpg://user:password@localhost:5432/myappdb  # Configure the DATABASE_URL environment variable for tests
+           DATABASE_URL: postgresql+asyncpg://user:password@localhost:5432/myappdb # Configure the DATABASE_URL environment variable for tests
         run: pytest
 
   build-and-push-docker:
@@ -75,3 +76,11 @@ jobs:
           cache-from: type=registry,ref=ak2856/user_management:cache
           cache-to: type=inline,mode=max
           
+      - name: Scan the Docker image
+        uses: aquasecurity/trivy-action@master
+        with:
+         image-ref: "ak2856/user_management:${{ github.sha }}"
+         format: "table"
+         exit-code: "1" # Fail the job if vulnerabilities are found
+         ignore-unfixed: true
+         severity: "CRITICAL,HIGH"
