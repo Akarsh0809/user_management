@@ -31,3 +31,9 @@ link : [https://github.com/Kiran-Ramisetti-kr483/user_management/pull/11/files](
 I updated the code in user_schemas.py to strictly validate the password and added few lines of code in user_routes.py. I even added few test cases to in test_user_api.py and test_user_schemas.py to verify validation of password.
 
 link : [https://github.com/Kiran-Ramisetti-kr483/user_management/pull/16/files](https://)
+
+## New Feature - upload pictures using minio.
+To be able to upload and update profile picture to personalize the suer account. For this I implemented an API endpoint for users to upload their profile picture, store the uploaded profile pictures securly in Minio, updating the user profile API endpoints to include the profile picture URL and retriving the profile picture URL from Minio when displaying user profiles.
+
+link : [https://github.com/Kiran-Ramisetti-kr483/user_management/pull/20/files](https://)
+
