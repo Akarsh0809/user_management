@@ -56,16 +56,37 @@ Throughout the development of the project, several challenges arose, each requir
 ### 1. Editing production.yml File:
 The production.yml file presented issues that were causing GitHub Actions to fail. To rectify this, I made changes to the GitHub username and Docker image name. Additionally, I added environment variables, including GITHUB_USERNAME and GITHUB_TOKEN, which successfully resolved the issues.
 
+##### LINK: https://github.com/Akarsh0809/user_management/pull/10
+
 ### 2. Email Verification Issue:
 One of the challenges involved email verification, where the structure was not organized correctly. By rearranging a few lines of code and adding additional test cases, I ensured that the email verification process functioned properly.
+
+##### LINK: https://github.com/Akarsh0809/user_management/pull/8
 
 ### 3. Creation of auth_routes.py:
 To maintain a clean and manageable codebase, I created a new file, auth_routes.py. This file handles routes related to authentication, such as login, logout, and password management. By separating authentication routes from user profile routes (handled in user_routes.py), the codebase became more organized and maintainable.
 
-### 4. Duplicate Email and Nickname Issue:
-An issue arose with duplicate emails and nicknames, where certain test cases were passing despite the failure related to error code 400. I addressed this by updating routes in user_routes.py and making changes to several files, including user_service.py, common.py, test_users_api.py, and test_user_service.py.
+##### LINK: https://github.com/Akarsh0809/user_management/pull/16
 
-### 5. Issues with Unverified and Locked Users:
-There were issues with the verification process for new and locked users. To resolve this, I updated code in user_routes.py and user_service.py. Additionally, I added new test cases in test_users_api.py to ensure the proper functioning of the verification process for new users.
+### 4. Eradicating Null Values for LinkedIn and GitHub URLs
+
+In this update, I focused on rectifying the issue of returning null values for LinkedIn and GitHub URLs. I made necessary changes in user_routes.py to address the errors causing the null values. Additionally, I updated production.yml to ensure the smooth deployment of the application.
+
+By diligently reviewing and updating the code, I successfully eradicated the errors, ensuring that LinkedIn and GitHub URLs are retrieved and displayed accurately within the application. This enhancement enhances user experience and data integrity.
+
+##### LINK: https://github.com/Akarsh0809/user_management/pull/12
+
+### 5. Inclusion of Minio Integration
+
+Under this heading, I made crucial updates to the codebase to incorporate Minio integration into our application. Specifically, I made modifications to user_routes.py and user_services.py by adding necessary lines of code to enable Minio functionality. Additionally, I updated config.py to accommodate the changes.
+
+These updates empower our application to utilize Minio for efficient handling of storage and retrieval of large volumes of unstructured data. By seamlessly integrating Minio, we enhance our application's scalability and reliability, providing users with a more robust storage solution.
+
+##### LINK: https://github.com/Akarsh0809/user_management/pull/6
+
+### 6. Password validation.
+I changed the code in user_schemas.py to tightly check passwords and added a few lines of code to user_routes.py. I even included a few test cases in test_user_api.py and test_user_schemas.py to validate passwords.
+
+##### LINK: https://github.com/Akarsh0809/user_management/pull/5
 
 Each of these challenges presented opportunities for learning and growth, and by addressing them effectively, the project moved forward smoothly towards completion.
