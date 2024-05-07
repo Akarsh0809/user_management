@@ -56,7 +56,7 @@ Throughout the development of the project, several challenges arose, each requir
 ### 1. Editing production.yml File:
 The production.yml file presented issues that were causing GitHub Actions to fail. To rectify this, I made changes to the GitHub username and Docker image name. Additionally, I added environment variables, including GITHUB_USERNAME and GITHUB_TOKEN, which successfully resolved the issues.
 
-##### LINK: https://github.com/Akarsh0809/user_management/pull/10
+##### LINK: [https://github.com/Akarsh0809/user_management/pull/10](https://)
 
 ### 2. Email Verification Issue:
 One of the challenges involved email verification, where the structure was not organized correctly. By rearranging a few lines of code and adding additional test cases, I ensured that the email verification process functioned properly.
