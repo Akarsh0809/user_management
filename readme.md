@@ -52,8 +52,8 @@ Production.yml file had issues that were causing the github actions to fail. I c
 
 link : [https://github.com/Kiran-Ramisetti-kr483/user_management/pull/2/files](https://)
 
-### 2. Emain verification issue
-The user verification structure was not in order. So, I had to change order of few lines of code and added few test cases to check if the emain verification was working well or not.
+### 2. Email verification issue
+The user verification structure was not in order. So, I had to change order of few lines of code and added few test cases to check if the email verification was working well or not.
 
 link : [https://github.com/Kiran-Ramisetti-kr483/user_management/pull/5/files](https://)
 
@@ -88,7 +88,7 @@ In total I added 19 test cases to resolve few issues and test if those issues ar
 ## Dockerhub link and Image.
 The project is working well and the docker image is being saved in the dockerhub. The link and image of my dockerhub repositories are give below:
 
-link : [https://hub.docker.com/repository/docker/kr483/user_management/general](https://)
+link : [https://hub.docker.com/repositories/kr483](https://)
 
 ![dockerhub](https://github.com/Kiran-Ramisetti-kr483/user_management/assets/157845848/8e493858-750b-424e-9747-3b451a87c86d)
 
