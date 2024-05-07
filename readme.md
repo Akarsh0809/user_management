@@ -1,5 +1,16 @@
 # Final Project
 
+## What I learnt in this course.
+In this course, I've acquired a wealth of knowledge and practical skills that are crucial for modern software development. Here’s a brief overview of what I learned:
+
+### 1. Docker.
+I learned how to use Docker, which has evolutionized deployment by allowing me to package my application  and its environment into a container that can run anywhere, ensuring consistency across different development and production environments.
+
+### 2. Nginx
+I learned how to use Docker, which has evolutionized deployment by allowing me to package my application and its environment into a container that can run anywhere, ensuring consistency across different development and production environments.
+
+
+
 ## 6 issues resolved.
 
 ### 1. Editing produciton.yml file.
