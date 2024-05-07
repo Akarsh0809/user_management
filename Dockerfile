@@ -1,5 +1,10 @@
 # Define a base stage with a Debian Bookworm base image that includes the latest glibc update
 FROM python:3.12-bookworm as base
+FROM debian:latest
+RUN apt-get update 
+    && apt-get upgrade -y 
+    && apt-get clean
+
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
